@@ -1,7 +1,7 @@
 # socialauth integration
 # ~~~~
 GET     /social/login                   controllers.SocialLogin.login
-#GET     /social/info                    controllers.SocialLogin.info
+GET     /social/info                    controllers.SocialLogin.info
 GET     /social/logout                  controllers.SocialLogin.logout
 GET     /authenticate/:provider         controllers.SocialLogin.authenticate(provider)
 POST    /authenticate/:provider         controllers.SocialLogin.authenticate(provider)
