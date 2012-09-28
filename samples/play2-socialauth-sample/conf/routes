@@ -1,0 +1,21 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+# User aware page, with optinal authentication
+GET     /user                       controllers.Application.user()
+# A Secure page, requiring authentication
+GET     /secure                     controllers.Application.secure()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# socialauth integration
+#GET     /social/login                   controllers.SocialLogin.login
+GET     /social/info                    controllers.SocialLogin.info
+GET     /social/logout                  controllers.SocialLogin.logout
+GET     /authenticate/:provider         controllers.SocialLogin.authenticate(provider)
+POST    /authenticate/:provider         controllers.SocialLogin.authenticate(provider)
+GET     /authenticate/:provider/done    controllers.SocialLogin.authenticateDone(provider)

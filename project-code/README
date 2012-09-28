@@ -1,0 +1,4 @@
+Play2-Socialauth
+================
+
+This is a pure Java play2 module for oAuth integration using [SocialAuth](http://code.google.com/p/socialauth/) backend.

@@ -1,0 +1,31 @@
+@(user: utils.SocialUser)
+@if(user == null) {
+
+	@***** no user in context *****@
+	@login()
+	
+} else {
+
+<div class="page-header">
+    <h3><img src="@user.getProfile().getProfileImageURL()" alt="@user.getProfile().getFirstName() @user.getProfile().getLastName()" width="40px"/> Welcome @user.getProfile().getFirstName()</h3>
+</div>
+
+<div class="clearfix">
+    <h3>User Details</h3>
+
+    <ul>
+        <li> <a href="https://www.facebook.com/profile.php?id=@user.getProfile().getValidatedId()">Facebook Profile</a></li>
+        <li> User Id: @user.getProfile().getValidatedId()</li>
+        <li> Logged in from: @user.getProfile().getProviderId()</li>
+        <li> Email: @if( user.getProfile().getEmail() != null ) { @user.getProfile().getEmail() } else { Not Available } </li>
+        <li> FirstName: @user.getProfile().getFirstName() </li>
+        <li> LastName: @user.getProfile().getLastName() </li>
+        <li> Language: @user.getProfile().getLanguage() </li>
+        <li> Date of Birth: @user.getProfile().getDob() </li>
+        <li> Gender: @user.getProfile().getGender() </li>
+        <li> Location: @user.getProfile().getLocation() </li>
+    </ul>
+
+</div>
+
+}
