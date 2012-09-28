@@ -13,6 +13,7 @@ object ApplicationBuild extends Build {
     )
 
     val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
+        organization := "com.minimalabs",
         // The Sonatype repository for socialauth
         resolvers += "sonatype-oss-public" at "http://oss.sonatype.org/content/groups/public/"
     )
